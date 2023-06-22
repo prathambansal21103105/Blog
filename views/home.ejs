@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs"); -%>
+    <h1>Home</h1>
+    <p><%= homeStartingContent %></p>
+    <% posts.forEach(function(element){ %>
+        <% var body=element.postbody.substring(0,157) + "...."; %>
+        <% link="/posts/"+element.title; %>
+        <h1> <%= element.title %> </h1>
+        <p> <%= body %> 
+        <a href=<%= link %> >Read More</a>
+        </p>
+    <% }); %>
+<%- include("partials/footer.ejs"); -%>
